@@ -49,7 +49,7 @@ prodottoNegozio.StampaProdotto();
 
 
 //creazione da classe acqua
-Acqua acquaNaturale = new Acqua("naturale", "acqua naturale", 0.80, 10, 1.5, 7.0, "fonte");
+Acqua acquaNaturale = new Acqua("acqua naturale", "acqua minerale liscia", 0.85, 10, 1.5, 7.0, "fonte");
 acquaNaturale.StampaProdotto();
 
 /*
@@ -61,16 +61,39 @@ Console.WriteLine(acquaNaturale.GetLitri());
 acquaNaturale.Riempi(0.3);
 Console.WriteLine(acquaNaturale.GetLitri());
 
-//metodo svouta
+//metodo svuota
 acquaNaturale.Svuota();
 Console.WriteLine(acquaNaturale.GetLitri());
 */
 
 
 //creazione da classe frutta
-Frutta sacchettoDiFrutta = new Frutta("sacchetto di frutta", "ananas a pezzi", 3.5, 22, 5);
+Frutta sacchettoDiFrutta = new Frutta("sacchetto di frutta", "ananas a pezzi", 3.45, 10, 5);
 sacchettoDiFrutta.StampaProdotto();
 
+/*
 //metodo togli un pezzo
 sacchettoDiFrutta.TogliPezzo(3);
 Console.WriteLine(sacchettoDiFrutta.GetPezzi());
+*/
+
+//creazione da classe elettrodomestico
+Elettrodomestico lavastoviglie = new Elettrodomestico("lavastoviglie", "lavastoviglie a incastro", 280, 22, "lava", "acciaio", "D");
+lavastoviglie.StampaProdotto();
+
+//creazione da classe cibo in scatola
+CiboInScatola fagioli = new CiboInScatola("barattolo di fagioli", "fagioli lessi", 1.19, 4, 300, "fagioli borlotti", "barattolo di vetro");
+fagioli.StampaProdotto();
+
+/*
+//metodo bevi -> maggiore della quantità nella scatola
+fagioli.Mangia(400);
+Console.WriteLine(fagioli.GetGrammi());
+
+//metodo svuota
+fagioli.Svuota();
+Console.WriteLine(fagioli.GetGrammi());
+
+//prova metodo classe prodotto su sottoclasse cibo in scatola
+fagioli.StampaPrezzo();
+*/
