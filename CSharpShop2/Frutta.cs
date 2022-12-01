@@ -23,6 +23,37 @@ namespace CSharpShop2
             return this.pezzi; 
         }
 
+        //setter
+        public void SetPezzi(int pezzi)
+        {
+            if(pezzi <= 5)
+            {
+                this.pezzi = pezzi;
+            }
+            else
+            {
+                Console.WriteLine("i pezzi sono massimo 5");
+            }
+        }
 
+        //metodi
+        public void TogliPezzo(int pezzo)
+        {
+            if (pezzo > 0 && pezzo < 6)
+            {
+                this.pezzi -= pezzo;
+            }
+            else
+            {
+                Console.WriteLine("non si possono togliere questo numero di pezzi");
+            }
+        }
+
+        //override
+        public override void StampaProdotto()
+        {
+            base.StampaProdotto();
+            Console.WriteLine("pezzi: " + pezzi);
+        }
     }    
 }

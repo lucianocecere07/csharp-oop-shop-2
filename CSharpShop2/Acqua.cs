@@ -70,7 +70,7 @@ namespace CSharpShop2
                 this.litri += litro;
             }else
             {
-                Console.WriteLine("l'acqua può strabordare");
+                Console.WriteLine("l'acqua non viene inserita, può strabordare");
             }
         }
 

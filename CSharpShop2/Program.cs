@@ -39,6 +39,7 @@ siano disponibili nel vostro programma principale.
 */
 
 using CSharpShop2;
+using System;
 
 //creazione nuovo prodotto
 Prodotto prodottoNegozio = new Prodotto("shampoo", "per capelli normali", 1.60, 22);
@@ -46,9 +47,30 @@ Prodotto prodottoNegozio = new Prodotto("shampoo", "per capelli normali", 1.60, 
 //stampa nome completo del prodotto
 prodottoNegozio.StampaProdotto();
 
+
 //creazione da classe acqua
 Acqua acquaNaturale = new Acqua("naturale", "acqua naturale", 0.80, 10, 1.5, 7.0, "fonte");
 acquaNaturale.StampaProdotto();
 
+/*
+//metodo bevi
+acquaNaturale.Bevi(0.5);
+Console.WriteLine(acquaNaturale.GetLitri());
+
+//metodo riempi
+acquaNaturale.Riempi(0.3);
+Console.WriteLine(acquaNaturale.GetLitri());
+
+//metodo svouta
+acquaNaturale.Svuota();
+Console.WriteLine(acquaNaturale.GetLitri());
+*/
 
 
+//creazione da classe frutta
+Frutta sacchettoDiFrutta = new Frutta("sacchetto di frutta", "ananas a pezzi", 3.5, 22, 5);
+sacchettoDiFrutta.StampaProdotto();
+
+//metodo togli un pezzo
+sacchettoDiFrutta.TogliPezzo(3);
+Console.WriteLine(sacchettoDiFrutta.GetPezzi());
