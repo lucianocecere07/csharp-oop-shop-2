@@ -18,7 +18,16 @@ namespace CSharpShop2
         //costruttori
         public Prodotto(int codice, string nome, string descrizione, double prezzo, int iva)
         {
-            this.codice = codice;
+            this.codice = CalcoloCodice();
+            this.nome = nome;
+            this.descrizione = descrizione;
+            this.prezzo = prezzo;
+            this.iva = iva;
+        }
+
+        public Prodotto(string nome, string descrizione, double prezzo, int iva)
+        {
+            this.codice = CalcoloCodice();
             this.nome = nome;
             this.descrizione = descrizione;
             this.prezzo = prezzo;
@@ -86,6 +95,16 @@ namespace CSharpShop2
         }
 
         //metodi
+
+        //METODO PRIVATO
+        private int CalcoloCodice()
+        {
+            //generare un numero random da 1 a 100
+            Random generatoreNumeriRandom = new Random();
+            int numeroRandom = generatoreNumeriRandom.Next(1, 100);
+            return numeroRandom;
+        }
+
         public void StampaPrezzo()
         {
             //prezzo con 2 decimali
@@ -99,16 +118,16 @@ namespace CSharpShop2
             Console.WriteLine("Nome completo del prodotto: " + codice + nome);
         }
 
-        public void StampaProdotto()
+        public virtual void StampaProdotto()
         {
             Console.WriteLine("------------------");
             Console.WriteLine("nome: " + nome);
             Console.WriteLine("descrizione: " + descrizione);
-            Console.WriteLine("prezzo (senza iva): " + Math.Round(prezzo, 2) + " euro");
+            Console.WriteLine("Prezzo (senza iva): " + Math.Round(prezzo, 2) + " euro");
             Console.WriteLine("iva: " + iva + "%");
             double prezzoTotale = prezzo / 100 * iva + prezzo;
             Console.WriteLine("Prezzo (con iva): " + Math.Round(prezzoTotale, 2) + " euro");
-            Console.WriteLine("------------------");
+            StampaNome();
         }
     }
 }

@@ -40,18 +40,15 @@ siano disponibili nel vostro programma principale.
 
 using CSharpShop2;
 
-//generare un numero random da 1 a 100
-Random generatoreNumeriRandom = new Random();
-int numeroRandom = generatoreNumeriRandom.Next(1, 100);
-
 //creazione nuovo prodotto
-Prodotto prodottoNegozio = new Prodotto(numeroRandom, "shampoo", "per capelli normali", 1.60, 22);
-
-//stampa prezzo senza/con iva
-prodottoNegozio.StampaPrezzo();
+Prodotto prodottoNegozio = new Prodotto("shampoo", "per capelli normali", 1.60, 22);
 
 //stampa nome completo del prodotto
-prodottoNegozio.StampaNome();
-
-//stampa il prodotto
 prodottoNegozio.StampaProdotto();
+
+//creazione da classe acqua
+Acqua acquaNaturale = new Acqua("naturale", "acqua naturale", 0.80, 10, 1.5, 7.0, "fonte");
+acquaNaturale.StampaProdotto();
+
+
+
